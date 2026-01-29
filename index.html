@@ -412,11 +412,6 @@
 
     <!-- Tech Stack & Tools Section -->
     <section id="tech-stack" class="py-32 px-6 relative overflow-hidden">
-        <!-- Background Image (Subtle Blend) -->
-        <div class="absolute inset-0 z-0">
-            <img src="bg-tech.jpg" alt="Tech Background" class="w-full h-full object-cover opacity-10 mix-blend-overlay">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
-        </div>
         
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="flex items-center space-x-4 mb-16 reveal">
@@ -841,10 +836,11 @@
         });
 
         // Dynamic Background Logic
-        const sections = ['home', 'about', 'experience', 'projects', 'contact'];
+        const sections = ['home', 'about', 'tech-stack', 'experience', 'projects', 'contact'];
         const backgrounds = {
             'home': 'bg-home.jpg',
             'about': 'bg-about.jpg',
+            'tech-stack': 'bg-tech.jpg',
             'experience': 'bg-experience.jpg',
             'projects': 'bg-projects.jpg',
             'contact': 'bg-contact.jpg'
