@@ -419,124 +419,123 @@
                 <div class="h-[1px] flex-1 bg-white/10"></div>
             </div>
 
-            <!-- Tech Stack & Tools Carousel -->
-            <div class="relative w-full max-w-5xl mx-auto reveal">
-                <div class="grid grid-cols-1 grid-rows-1">
+            <!-- Tech Stack & Tools Infinite Carousel -->
+            <div class="relative w-full overflow-hidden reveal py-8">
+                <!-- Carousel Track -->
+                <div id="carousel-track" class="flex gap-6 transition-transform duration-500 ease-in-out">
                     
-                    <!-- Tech Stack Group -->
-                    <div id="tech-group" class="col-start-1 row-start-1 transition-all duration-1000 ease-in-out transform opacity-100 translate-x-0 scale-100 filter blur-0">
-                        <h3 class="text-xl font-bold mb-8 flex items-center justify-center gap-3 text-white">
-                            <i class="fa-solid fa-layer-group text-blue-500"></i>
-                            <span>Technologies</span>
-                        </h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                            <!-- HTML -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-brands fa-html5 text-4xl text-orange-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">HTML</span>
-                            </div>
-                            <!-- CSS -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-brands fa-css3-alt text-4xl text-blue-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">CSS</span>
-                            </div>
-                            <!-- JS -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-brands fa-js text-4xl text-yellow-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">JavaScript</span>
-                            </div>
-                            <!-- Tailwind -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-solid fa-wind text-4xl text-cyan-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">Tailwind</span>
-                            </div>
-                            <!-- MySQL -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-solid fa-database text-4xl text-blue-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">MySQL</span>
-                            </div>
-                            <!-- Laravel -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-brands fa-laravel text-4xl text-red-600 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">Laravel</span>
-                            </div>
+                    <!-- Technologies -->
+                    <!-- HTML -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-brands fa-html5 text-4xl text-orange-500 group-hover:scale-110 transition-transform relative z-10"></i>
                         </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">HTML</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Technology</span>
                     </div>
 
-                    <!-- Tools Group -->
-                    <div id="tools-group" class="col-start-1 row-start-1 transition-all duration-1000 ease-in-out transform opacity-0 translate-x-12 scale-95 filter blur-sm pointer-events-none">
-                        <h3 class="text-xl font-bold mb-8 flex items-center justify-center gap-3 text-white">
-                            <i class="fa-solid fa-toolbox text-purple-500"></i>
-                            <span>Development Tools</span>
-                        </h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                            <!-- MySQL Yog -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-solid fa-table text-4xl text-indigo-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-center text-white">MySQL Yog</span>
-                            </div>
-                            <!-- Bitvise -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-solid fa-server text-4xl text-green-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-center text-white">Bitvise</span>
-                            </div>
-                            <!-- VS Code -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-solid fa-code text-4xl text-blue-500 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-center text-white">VS Code</span>
-                            </div>
-                            <!-- GitHub -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-brands fa-github text-4xl text-white group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">GitHub</span>
-                            </div>
-                            <!-- Git -->
-                            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group">
-                                <div class="loading-icon-container">
-                                    <div class="loading-ring"></div>
-                                    <i class="fa-brands fa-git-alt text-4xl text-orange-600 group-hover:scale-110 transition-transform relative z-10"></i>
-                                </div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-white">Git</span>
-                            </div>
+                    <!-- CSS -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-brands fa-css3-alt text-4xl text-blue-500 group-hover:scale-110 transition-transform relative z-10"></i>
                         </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">CSS</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Technology</span>
                     </div>
 
-                </div>
-                
-                <!-- Indicators -->
-                <div class="flex justify-center mt-12 gap-3">
-                    <button onclick="manualSwitch('tech')" id="indicator-tech" class="w-3 h-3 rounded-full bg-blue-500 transition-all duration-300"></button>
-                    <button onclick="manualSwitch('tools')" id="indicator-tools" class="w-3 h-3 rounded-full bg-white/20 transition-all duration-300 hover:bg-white/40"></button>
+                    <!-- JS -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-brands fa-js text-4xl text-yellow-500 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">JavaScript</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Technology</span>
+                    </div>
+
+                    <!-- Tailwind -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-solid fa-wind text-4xl text-cyan-500 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">Tailwind</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Technology</span>
+                    </div>
+
+                    <!-- MySQL -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-solid fa-database text-4xl text-blue-500 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">MySQL</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Technology</span>
+                    </div>
+
+                    <!-- Laravel -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-brands fa-laravel text-4xl text-red-600 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">Laravel</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Technology</span>
+                    </div>
+
+                    <!-- Tools -->
+                    <!-- MySQL Yog -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-solid fa-table text-4xl text-indigo-500 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-center text-white">MySQL Yog</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Tool</span>
+                    </div>
+
+                    <!-- Bitvise -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-solid fa-server text-4xl text-green-500 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-center text-white">Bitvise</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Tool</span>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-solid fa-code text-4xl text-blue-500 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-center text-white">VS Code</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Tool</span>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-brands fa-github text-4xl text-white group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">GitHub</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Tool</span>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-all group min-w-[280px] h-[200px]">
+                        <div class="loading-icon-container">
+                            <div class="loading-ring"></div>
+                            <i class="fa-brands fa-git-alt text-4xl text-orange-600 group-hover:scale-110 transition-transform relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-white">Git</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest mt-2">Tool</span>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1021,76 +1020,42 @@
             }, 1000);
         });
 
-        // Tech Stack & Tools Carousel Logic
-        let currentTechSlide = 'tech';
-        let techInterval;
+        // Infinite Carousel Logic
+        const track = document.getElementById('carousel-track');
+        let isTransitioning = false;
 
-        function showTechStack(type) {
-            const techGroup = document.getElementById('tech-group');
-            const toolsGroup = document.getElementById('tools-group');
-            const indicatorTech = document.getElementById('indicator-tech');
-            const indicatorTools = document.getElementById('indicator-tools');
-            
-            if(!techGroup || !toolsGroup) return;
+        function slideCarousel() {
+            if (isTransitioning) return;
+            isTransitioning = true;
 
-            if (type === 'tech') {
-                // Show Tech
-                techGroup.classList.remove('opacity-0', '-translate-x-12', 'scale-95', 'filter', 'blur-sm', 'pointer-events-none');
-                techGroup.classList.add('opacity-100', 'translate-x-0', 'scale-100', 'filter', 'blur-0');
-                
-                // Hide Tools
-                toolsGroup.classList.remove('opacity-100', 'translate-x-0', 'scale-100', 'filter', 'blur-0');
-                toolsGroup.classList.add('opacity-0', 'translate-x-12', 'scale-95', 'filter', 'blur-sm', 'pointer-events-none');
-                
-                // Update Indicators
-                if(indicatorTech) {
-                    indicatorTech.classList.remove('bg-white/20', 'hover:bg-white/40');
-                    indicatorTech.classList.add('bg-blue-500');
-                }
-                
-                if(indicatorTools) {
-                    indicatorTools.classList.remove('bg-blue-500');
-                    indicatorTools.classList.add('bg-white/20', 'hover:bg-white/40');
-                }
-                
-                currentTechSlide = 'tech';
-            } else {
-                // Show Tools
-                toolsGroup.classList.remove('opacity-0', 'translate-x-12', 'scale-95', 'filter', 'blur-sm', 'pointer-events-none');
-                toolsGroup.classList.add('opacity-100', 'translate-x-0', 'scale-100', 'filter', 'blur-0');
-                
-                // Hide Tech
-                techGroup.classList.remove('opacity-100', 'translate-x-0', 'scale-100', 'filter', 'blur-0');
-                techGroup.classList.add('opacity-0', '-translate-x-12', 'scale-95', 'filter', 'blur-sm', 'pointer-events-none');
-                
-                // Update Indicators
-                if(indicatorTools) {
-                    indicatorTools.classList.remove('bg-white/20', 'hover:bg-white/40');
-                    indicatorTools.classList.add('bg-blue-500');
-                }
-                
-                if(indicatorTech) {
-                    indicatorTech.classList.remove('bg-blue-500');
-                    indicatorTech.classList.add('bg-white/20', 'hover:bg-white/40');
-                }
-                
-                currentTechSlide = 'tools';
-            }
-        }
+            const firstCard = track.firstElementChild;
+            // Get the full width of the card including gap
+            // Using gap-6 = 1.5rem = 24px
+            // Card width is 280px
+            // Total shift = 280 + 24 = 304px
+            const shiftAmount = 304; 
 
-        function manualSwitch(type) {
-            clearInterval(techInterval); 
-            showTechStack(type);
-            techInterval = setInterval(autoSwitchTech, 5000);
-        }
+            // Apply transition
+            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transform = `translateX(-${shiftAmount}px)`;
 
-        function autoSwitchTech() {
-            const next = currentTechSlide === 'tech' ? 'tools' : 'tech';
-            showTechStack(next);
+            track.addEventListener('transitionend', () => {
+                // Move first card to the end
+                track.appendChild(firstCard);
+                
+                // Remove transition to reset transform instantly
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                
+                // Force reflow
+                void track.offsetWidth;
+                
+                isTransitioning = false;
+            }, { once: true });
         }
 
         // Start Auto Rotation
-        techInterval = setInterval(autoSwitchTech, 4000);
+        setInterval(slideCarousel, 2500); // Slide every 2.5 seconds
     </script>
 </body>
 </html>
