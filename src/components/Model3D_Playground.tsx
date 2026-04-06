@@ -13,7 +13,7 @@ interface MousePosition {
 const Model: React.FC<{ mousePosition: MousePosition }> = ({ mousePosition }) => {
   const groupRef = useRef<THREE.Group>(null);
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
-  const { scene, animations } = useGLTF('/robot_playground.glb');
+  const { scene, animations } = useGLTF(`${import.meta.env.BASE_URL}robot_playground.glb`);
   const targetRotation = useRef({ x: 0, y: 0 });
 
   const clonedScene = useMemo(() => SkeletonUtils.clone(scene), [scene]);

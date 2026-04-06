@@ -77,7 +77,7 @@ const About = () => {
                       className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-orange-500/30 shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all duration-300 relative group/avatar cursor-pointer"
                       onClick={() => setIsImageModalOpen(true)}
                     >
-                      <img src="/about.jpg" alt="Celherson" className="w-full h-full object-cover group-hover/avatar:scale-110 transition-transform duration-500" />
+                      <img src={`${import.meta.env.BASE_URL}about.jpg`} alt="Celherson" className="w-full h-full object-cover group-hover/avatar:scale-110 transition-transform duration-500" />
 
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300">
@@ -358,7 +358,7 @@ const About = () => {
 
           {/* Enlarged Image */}
           <img
-            src="/about.jpg"
+            src={`${import.meta.env.BASE_URL}about.jpg`}
             alt="Celherson Enlarged"
             className="relative max-w-[90vw] max-h-[85vh] object-contain rounded-3xl border-4 border-orange-500/50 shadow-[0_0_50px_rgba(249,115,22,0.5)] animate-[pulse_3s_infinite]"
             onClick={(e) => e.stopPropagation()}

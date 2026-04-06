@@ -69,7 +69,7 @@ const Home = () => {
   const handleDownload = () => {
     // Create an invisible link to download the PDF
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = `${import.meta.env.BASE_URL}resume.pdf`;
     link.download = 'resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -103,7 +103,7 @@ const Home = () => {
       >
         {/* Upper Left Massive Gear (Visible on Modal OR Scrolling) */}
         <img 
-          src="/double_gear.gif" 
+          src={`${import.meta.env.BASE_URL}double_gear.gif`} 
           alt="Top Left Gear" 
           className={`absolute -top-12 -left-16 sm:-top-20 sm:-left-20 md:-top-24 md:-left-24 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-contain mix-blend-screen transition-opacity duration-700 ${
             isDownloadModalOpen || isSuccessModalOpen || isScrolling ? 'opacity-90' : 'opacity-0'
@@ -112,7 +112,7 @@ const Home = () => {
 
         {/* Lower Right Massive Gear (Visible ONLY on Modal) */}
         <img 
-          src="/gear.gif" 
+          src={`${import.meta.env.BASE_URL}gear.gif`} 
           alt="Bottom Right Gear" 
           className={`absolute bottom-0 right-0 translate-x-[35%] translate-y-[35%] w-80 h-80 sm:w-96 sm:h-96 md:w-[32rem] md:h-[32rem] object-contain mix-blend-screen transition-opacity duration-700 ${
             isDownloadModalOpen || isSuccessModalOpen ? 'opacity-90' : 'opacity-0'
@@ -135,7 +135,7 @@ const Home = () => {
         >
           {/* Animated GIF Icon */}
           <div className="w-24 h-24 mb-6 rounded-2xl bg-orange-500/10 flex items-center justify-center p-2 shadow-inner border border-orange-500/20">
-            <img src="/download_cloud.gif" alt="Download Illustration" className="w-full h-full object-contain mix-blend-screen" />
+            <img src={`${import.meta.env.BASE_URL}download_cloud.gif`} alt="Download Illustration" className="w-full h-full object-contain mix-blend-screen" />
           </div>
 
           <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400 mb-3">
@@ -178,7 +178,7 @@ const Home = () => {
         >
           {/* Animated GIF Icon */}
           <div className="w-24 h-24 mb-6 rounded-2xl bg-emerald-500/10 flex items-center justify-center p-2 shadow-inner border border-emerald-500/20">
-            <img src="/success.gif" alt="Success Illustration" className="w-full h-full object-contain mix-blend-screen" />
+            <img src={`${import.meta.env.BASE_URL}success.gif`} alt="Success Illustration" className="w-full h-full object-contain mix-blend-screen" />
           </div>
 
           <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-3">
@@ -221,7 +221,7 @@ const Home = () => {
                   <span className="inline-flex items-center align-middle whitespace-nowrap">
                     Guzman
                     <img 
-                      src="/hi.gif" 
+                      src={`${import.meta.env.BASE_URL}hi.gif`} 
                       alt="hi" 
                       className="w-14 sm:w-16 md:w-20 lg:w-24 h-auto object-contain ml-3 sm:ml-5"
                       onError={(e) => {

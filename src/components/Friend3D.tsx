@@ -8,7 +8,7 @@ interface MousePosition { x: number; y: number; }
 const FriendModel: React.FC<{ mousePosition: MousePosition }> = ({ mousePosition }) => {
   const groupRef = useRef<THREE.Group>(null);
   // Target the requested friend.glb directly
-  const { scene, animations } = useGLTF('/friend.glb');
+  const { scene, animations } = useGLTF(`${import.meta.env.BASE_URL}friend.glb`);
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
   const targetRotation = useRef({ x: 0, y: 0 });
 
@@ -78,6 +78,6 @@ const FriendScene = () => {
 };
 
 // Pre-fetch the heavy 56MB asset directly within react-three/fiber cache
-useGLTF.preload('/friend.glb');
+useGLTF.preload(`${import.meta.env.BASE_URL}friend.glb`);
 
 export default FriendScene;

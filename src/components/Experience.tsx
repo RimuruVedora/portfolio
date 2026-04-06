@@ -64,7 +64,7 @@ const Experience = () => {
       >
         <video 
           ref={mainVideoRef}
-          src="/advertise.mp4" 
+          src={`${import.meta.env.BASE_URL}advertise.mp4`} 
           className="w-full h-full object-cover"
           playsInline
           preload="none"
@@ -133,7 +133,7 @@ const Experience = () => {
              
              {/* Note: This is an entirely distinct video ref specifically for manual user control */}
              <video 
-               src="/advertise.mp4" 
+               src={`${import.meta.env.BASE_URL}advertise.mp4`} 
                className="w-full h-auto max-h-[60vh] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                controls
                preload="metadata"

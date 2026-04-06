@@ -12,7 +12,7 @@ const Model: React.FC<{ mousePosition: MousePosition }> = ({ mousePosition }) =>
   const groupRef = useRef<THREE.Group>(null);
   const headRef = useRef<THREE.Object3D | null>(null);
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
-  const { scene, animations } = useGLTF('/model.glb');
+  const { scene, animations } = useGLTF(`${import.meta.env.BASE_URL}model.glb`);
   const targetRotation = useRef({ x: 0, y: 0 });
   const smoothedRotation = useRef({ x: 0, y: 0 });
   const baseRotation = useRef<THREE.Euler | null>(null);
