@@ -201,29 +201,29 @@ const Home = () => {
       </div>
 
       <section id="home" className="w-full relative flex items-start justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 relative">
         
         {/* Left Side - Text Content & Scrolling Cards */}
-        <div className="w-full text-left flex flex-col z-10 order-2 lg:order-1 px-8 sm:px-12 lg:px-16">
+        <div className="w-full text-left flex flex-col z-10 order-2 md:order-1" style={{ paddingLeft: 'clamp(20px, 6vw, 96px)', paddingRight: '8px' }}>
           
           {/* Block 1: Hero */}
-          <div className="min-h-[100dvh] flex flex-col justify-center py-20 snap-center relative z-20">
+          <div className="min-h-[100dvh] flex flex-col justify-center py-16 md:py-20 snap-center relative z-20">
             <div className="space-y-6 sm:space-y-8 w-full">
               <div className="space-y-2">
-                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide mb-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <p className="text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-5xl font-bold tracking-wide mb-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Welcome to my portfolio
                 </p>
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-red-500 tracking-widest uppercase mt-4">
+                <p className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold text-red-500 tracking-widest uppercase mt-3">
                   Hi My Name Is
                 </p>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-orange-500 drop-shadow-[0_0_20px_rgba(249,115,22,0.8)] leading-tight tracking-tight animate-pulse mt-2 text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-orange-500 drop-shadow-[0_0_20px_rgba(249,115,22,0.8)] leading-tight tracking-tight animate-pulse mt-2 text-left">
                   Celherson A.{' '}
                   <span className="inline-flex items-center align-middle whitespace-nowrap">
                     Guzman
                     <img 
                       src={`${import.meta.env.BASE_URL}hi.gif`} 
                       alt="hi" 
-                      className="w-14 sm:w-16 md:w-20 lg:w-24 h-auto object-contain ml-3 sm:ml-5"
+                      className="w-10 sm:w-12 md:w-14 lg:w-16 xl:w-24 h-auto object-contain ml-2 sm:ml-3"
                       onError={(e) => {
                         (e.target as HTMLImageElement).style.display = 'none';
                       }}
@@ -232,8 +232,8 @@ const Home = () => {
                 </h1>
               </div>
 
-              <div className="min-h-[3rem] sm:min-h-[3.5rem] md:min-h-[4rem] h-auto flex items-center justify-start">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
+              <div className="min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem] h-auto flex items-center justify-start">
+                <h2 className="text-lg sm:text-xl md:text-xl lg:text-2xl xl:text-4xl font-semibold">
                   <span className="text-gray-300">I'm a </span>
                   <Typewriter
                     texts={['Freelance Web/Mobile Developer', 'Full Stack Developer']}
@@ -246,13 +246,13 @@ const Home = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 justify-start pt-8 sm:pt-12 mt-8 z-20 relative">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-start pt-5 sm:pt-8 md:pt-8 mt-5 z-20 relative">
                 <button
                   onClick={() => {
                     const contact = document.getElementById('contact');
                     if (contact) contact.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="flex items-center justify-center gap-3 px-10 py-4 lg:py-5 bg-gradient-to-r from-violet-600 to-blue-600 text-white font-bold rounded-full hover:from-violet-500 hover:to-blue-500 transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.6)] hover:shadow-[0_0_35px_rgba(139,92,246,1)] hover:scale-105 active:scale-95 text-center text-xl"
+                  className="flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 lg:px-10 lg:py-4 bg-gradient-to-r from-violet-600 to-blue-600 text-white font-bold rounded-full hover:from-violet-500 hover:to-blue-500 transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.6)] hover:shadow-[0_0_35px_rgba(139,92,246,1)] hover:scale-105 active:scale-95 text-center text-base md:text-lg lg:text-xl"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -264,7 +264,7 @@ const Home = () => {
                     e.preventDefault();
                     setIsDownloadModalOpen(true);
                   }}
-                  className="flex items-center justify-center gap-3 px-10 py-4 lg:py-5 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold rounded-full hover:from-orange-400 hover:to-amber-400 transition-all duration-300 shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:shadow-[0_0_35px_rgba(249,115,22,1)] hover:scale-105 active:scale-95 text-center text-xl"
+                  className="flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 lg:px-10 lg:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold rounded-full hover:from-orange-400 hover:to-amber-400 transition-all duration-300 shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:shadow-[0_0_35px_rgba(249,115,22,1)] hover:scale-105 active:scale-95 text-center text-base md:text-lg lg:text-xl"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -328,7 +328,7 @@ const Home = () => {
         </div>
 
         {/* Right Side - 3D Model Sticky Container */}
-        <div className="w-full h-[400px] lg:h-[100dvh] lg:sticky lg:top-0 flex items-center justify-center order-1 lg:order-2 z-0 pb-10 lg:pb-0 pointer-events-none">
+        <div className="w-full h-[280px] sm:h-[340px] md:h-[100dvh] md:sticky md:top-0 flex items-center justify-center order-1 md:order-2 z-0 pb-6 md:pb-0 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-3xl opacity-60"></div>
           <div className="w-full h-full relative pointer-events-auto flex items-center justify-center max-h-[800px]">
              <Model3D />

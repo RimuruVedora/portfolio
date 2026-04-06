@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Model3D_Playground from './Model3D_Playground';
 
+const base = import.meta.env.BASE_URL;
+
 // Functional specialized Intersection Observer Card Component mimicking Home layout
 const ProjectScrollCard = ({ proj, total, onClick }: { proj: any, total: number, onClick: () => void }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -161,7 +163,7 @@ const Projects = () => {
     { 
       id: 1, 
       title: 'Hotel & Restaurant Financial Management System', 
-      img: '/project_1_login.png', 
+      img: `${base}project_1_login.png`, 
       stack: 'Full Stack Architecture',
       link: 'https://financials.soliera-hotel-restaurant.com/login',
       features: [
@@ -178,27 +180,27 @@ const Projects = () => {
         {
           title: 'Dashboard Overview',
           desc: 'A dynamic dashboard that provides real-time insights into financial health. Key metrics include Net Income, EBITDA, Total Receivables, Total Payables, and Total Employees. Features interactive financial ratio charts and a real-time transaction feed.',
-          images: ['/finance/dashboard_Card.png']
+          images: [`${base}finance/dashboard_Card.png`]
         },
         {
           title: 'Security & Administration',
           desc: 'Comprehensive user administration interface allowing admins to view and manage all system users. Advanced security features to locate, verify, or unverify user devices to prevent unauthorized access.',
-          images: ['/finance/users.png', '/finance/google_map.png']
+          images: [`${base}finance/users.png`, `${base}finance/google_map.png`]
         },
         {
           title: 'AI Financial Prediction',
           desc: 'Advanced AI algorithms calculate and predict total budget and income based on historical transaction data.',
-          images: ['/finance/budget risk page_1.png', '/finance/ai_risk_budget_page_2.png', '/finance/Ai_budget_risk page 1.png']
+          images: [`${base}finance/budget risk page_1.png`, `${base}finance/ai_risk_budget_page_2.png`, `${base}finance/Ai_budget_risk page 1.png`]
         },
         {
           title: 'Business Intelligence & Growth',
           desc: 'Continuous prediction of income and company growth. The system identifies potential financial mistakes and provides actionable insights via the Business Intelligence module.',
-          images: ['/finance/prediction_trend_analysis_Ai.png']
+          images: [`${base}finance/prediction_trend_analysis_Ai.png`]
         },
         {
           title: 'Smart Payable Management',
           desc: 'AI-driven decision support for managing payable transactions. The system suggests optimal payment methods and dates for all disbursements to maximize cash flow efficiency.',
-          images: ['/finance/Smart_Payable_Management.png']
+          images: [`${base}finance/Smart_Payable_Management.png`]
         }
       ]
     },
@@ -211,7 +213,7 @@ const Projects = () => {
         { label: 'JavaScript', icon: 'https://cdn.simpleicons.org/javascript/F7DF1E' },
         { label: 'HTML', icon: 'https://cdn.simpleicons.org/html5/E34F26' },
       ],
-      img: '/HR4/Home_page.png',
+      img: `${base}HR4/Home_page.png`,
       stack: 'Full Stack Architecture',
       link: 'https://hr4.soliera-hotel-restaurant.com/',
       features: [
@@ -221,32 +223,32 @@ const Projects = () => {
         {
           title: 'Dashboard',
           desc: 'Executive visibility into your entire HR landscape with real-time KPIs: headcount, monthly payroll, open roles, and HMO enrollment. Storytelling charts that reveal department mix and headcount momentum, turning raw data into decisions. Built-in analytics for payroll vs budget and earnings vs deductions to surface cost signals before they become issues. AI‑ready insights with configurable toggles, so you can unlock automated forecasting and recommendations when you\'re ready.',
-          images: ['/HR4/Home_page.png', '/HR4/Home_page_part2.png']
+          images: [`${base}HR4/Home_page.png`, `${base}HR4/Home_page_part2.png`]
         },
         {
           title: 'Employee Master List',
           desc: 'Your single source of truth for every employee: rich profiles, lifecycle badges, department/level, and government ID completeness. Lightning-fast search and filters to find anyone in seconds, from front desk to finance. Secure, OTP-verified CSV export designed for compliance-ready reporting and external sharing. Seamless drill-down to detailed records for instant context in performance, compensation, and compliance.',
-          images: ['/HR4/Employee_master_list.png', '/HR4/Employee_Details.png']
+          images: [`${base}HR4/Employee_master_list.png`, `${base}HR4/Employee_Details.png`]
         },
         {
           title: 'Workforce Alerts & Vacant Position',
           desc: 'Live "risk radar" that flags missing IDs, expiring contracts, terminated and on-leave employees—perfect for proactive HR action. Auto-detects available positions from workforce changes, so talent teams can fill roles faster. Tabbed views and focused filters make investigations effortless across departments and cohorts. Clear metrics and visual cues help leadership prioritize the most urgent workforce tasks.',
-          images: ['/HR4/work_force_1.png', '/HR4/work_force_2.png']
+          images: [`${base}HR4/work_force_1.png`, `${base}HR4/work_force_2.png`]
         },
         {
           title: 'HMO & Benefits Providers',
           desc: 'A curated directory of hospitals, clinics, labs, government/private partners, and benefits—with ratings and ownership types. Provider cards show availability (24/7), specialty, lifecycle, and validity windows for confident vendor management. Powerful search and rich filters to match the right provider to every employee and policy. OTP-protected export and polished add/edit flows support real-world administration with zero friction.',
-          images: ['/HR4/HMO_Providers.png', '/HR4/HMO_Providers_2.png']
+          images: [`${base}HR4/HMO_Providers.png`, `${base}HR4/HMO_Providers_2.png`]
         },
         {
           title: 'Compensation Planning',
           desc: 'Strategic pay architecture with Salary Structures, Pay Grade ranges, fairness analytics, and budget scenarios you can save and reuse. Automated merit recommendations convert performance ratings into proposed increases—fast, transparent, and consistent. Review cycle management tracks the workflow from HR to Finance, aligning stakeholders around one version of truth. Precision filtering and planning tools ensure equitable outcomes while protecting your budget envelope.',
-          images: ['/HR4/salary_structure.png', '/HR4/merit_cycle.png']
+          images: [`${base}HR4/salary_structure.png`, `${base}HR4/merit_cycle.png`]
         },
         {
           title: 'Payroll Management',
           desc: 'End-to-end payroll operations: map benefits to earning/deduction codes, control statutory flags, and maintain compliance with SSS/PhilHealth/Pag‑IBIG. Adjustments & one‑off payments for retro, bonuses, and corrections—no more spreadsheet chaos. Payroll Run gives you register, history, and per‑employee breakdowns of gross, deductions, and net for transparent audits. Designed for accuracy and accountability so you close payroll with confidence every cycle.',
-          images: ['/HR4/payroll1.png', '/HR4/payroll2.png', '/HR4/payroll3.png', '/HR4/payroll4.png']
+          images: [`${base}HR4/payroll1.png`, `${base}HR4/payroll2.png`, `${base}HR4/payroll3.png`, `${base}HR4/payroll4.png`]
         },
       ]
     },
@@ -254,7 +256,7 @@ const Projects = () => {
     {
       id: 3,
       title: 'TNVS Human Resource',
-      img: '/HR2/login.png',
+      img: `${base}HR2/login.png`,
       stack: 'Full Stack Architecture',
       link: 'https://hr2.viahale.com/login',
       features: [
@@ -270,29 +272,29 @@ const Projects = () => {
         {
           title: 'Strategic Dashboard',
           desc: 'A centralized command center providing real-time visibility into organizational health. It tracks key KPIs such as Retention Rate, Average Proficiency Percent, and Bench Strength, allowing leadership to make data-driven decisions.',
-          images: ['/HR2/Dashboard1.png', '/HR2/dashboard2.png', '/HR2/dashboard3.png']
+          images: [`${base}HR2/Dashboard1.png`, `${base}HR2/dashboard2.png`, `${base}HR2/dashboard3.png`]
         },
         {
           title: 'Intelligent Competency Framework',
           desc: 'Enterprise Skill Architecture: Defines the organization\'s "DNA" by mapping core competencies and proficiency levels to specific job roles. This ensures every employee knows exactly what is required to excel in their current position. Competency Analytics & Gap Discovery: High-level visual intelligence that identifies skill gaps across departments. It features AI-powered individual analysis to recommend personalized growth plans, ensuring the workforce is future-ready.',
-          images: ['/HR2/compentency.png', '/HR2/competency_analytics.png']
+          images: [`${base}HR2/compentency.png`, `${base}HR2/competency_analytics.png`]
         },
         {
           title: 'End-to-End Learning Management System (LMS)',
           desc: 'Course & Content Factory: A comprehensive engine for creating and managing training courses. It supports rich media, including automated PDF text extraction for quick content previewing. Assessment & Examination Engine: A sophisticated testing module that supports grouped exams, time-limited assessments, and automated grading. It tracks progress through weekly learning milestones. Overall Performance Tracking: Consolidates scores from both online assessments and physical training sessions into a single "Overall Score" dashboard, providing a 360-degree view of employee learning progress.',
-          images: ['/HR2/lms_courses.png', '/HR2/lms_learning_material.png']
+          images: [`${base}HR2/lms_courses.png`, `${base}HR2/lms_learning_material.png`]
         },
         {
           title: 'Strategic Talent & Succession Planning',
           desc: 'Training Lifecycle Management: Coordinates the entire training schedule, from pre-training enrollment to post-evaluation. It includes participant tracking and capacity management to optimize training resources. Talent Assessment & High-Potential (HiPo) Identification: Automatically identifies top performers based on skill proficiency, exam results, and training completion. Succession Pipeline: A forward-looking tool that maps potential candidates to critical leadership roles. It tracks "Readiness Windows" (e.g., Ready Now vs. 1-2 Years) to ensure business continuity and reduce leadership risk.',
-          images: ['/HR2/Succession_planning1.png', '/HR2/succession_planning2.png', '/HR2/TRAINING.png']
+          images: [`${base}HR2/Succession_planning1.png`, `${base}HR2/succession_planning2.png`, `${base}HR2/TRAINING.png`]
         },
       ]
     },
     {
       id: 4,
       title: 'SaaS Administrative Management System',
-      img: '/administrative/login.png',
+      img: `${base}administrative/login.png`,
       stack: 'SaaS Platform',
       features: [
         { label: 'AI Integrated', icon: '✦', count: 1, color: 'purple' },
@@ -307,37 +309,37 @@ const Projects = () => {
         {
           title: 'Dashboard',
           desc: 'A high-level command center providing real-time analytics and visualized KPIs. It tracks system-wide metrics like user activity, document status distributions, and recent audit logs, giving administrators instant oversight of operations.',
-          images: ['/administrative/dashboard.png']
+          images: [`${base}administrative/dashboard.png`]
         },
         {
           title: 'User Management',
           desc: 'A complete RBAC (Role-Based Access Control) provisioning panel. It manages employee accounts, roles (Admin/User), and permissions with advanced filtering by department and account status, ensuring secure and organized system access.',
-          images: ['/administrative/usm1.png', '/administrative/usm2.png']
+          images: [`${base}administrative/usm1.png`, `${base}administrative/usm2.png`]
         },
         {
           title: 'Document Management',
           desc: 'An intelligent tracking system for the document lifecycle. It features AI-assisted validation, automated logging, and a secure "Bin" for archiving expired records, ensuring that every document is routed, reviewed, and stored correctly.',
-          images: ['/administrative/document_management1.png', '/administrative/document_management2.png', '/administrative/document_management3.png']
+          images: [`${base}administrative/document_management1.png`, `${base}administrative/document_management2.png`, `${base}administrative/document_management3.png`]
         },
         {
           title: 'Legal',
           desc: 'A specialized portal for high-stakes documentation like contracts and job orders. It integrates AI-powered summaries and an interactive AI Chat Assistant to help reviewers analyze risks, check compliance, and make faster, data-driven decisions.',
-          images: ['/administrative/legal1.png', '/administrative/legal2.png']
+          images: [`${base}administrative/legal1.png`, `${base}administrative/legal2.png`]
         },
         {
           title: 'Visitor Management',
           desc: 'A streamlined digital logbook for onsite security. It handles the end-to-end visitor experience—from initial request and date-range filtering to approval workflows and onsite status tracking (Pending/Approved/Denied/Complete).',
-          images: ['/administrative/visitor1.png', '/administrative/visitor2.png']
+          images: [`${base}administrative/visitor1.png`, `${base}administrative/visitor2.png`]
         },
         {
           title: 'Facility Management',
           desc: 'A centralized hub for resource allocation. It manages facility inventory, tracks maintenance/usage requests, and provides a clear Facility Log for scheduling and operational oversight.',
-          images: ['/administrative/facility1.png', '/administrative/facility2.png']
+          images: [`${base}administrative/facility1.png`, `${base}administrative/facility2.png`]
         },
         {
           title: 'Audit Trail',
           desc: 'The system\'s "Black Box"—a comprehensive, tamper-evident log of every action taken within the platform. It tracks "who did what and when" across all modules, providing the ultimate layer of accountability and transparency for stakeholders.',
-          images: ['/administrative/audit_Trail.png']
+          images: [`${base}administrative/audit_Trail.png`]
         },
       ]
     },
@@ -345,7 +347,7 @@ const Projects = () => {
     {
       id: 5,
       title: 'School Management System Curriculum Builder',
-      img: '/School_Management_System/login.png',
+      img: `${base}School_Management_System/login.png`,
       stack: 'EdTech Architecture',
       features: [
         { label: 'AI Integrated', icon: '✦', count: 1, color: 'purple' },
@@ -360,32 +362,32 @@ const Projects = () => {
         {
           title: 'Intelligent Command Center (Dashboard)',
           desc: 'Visual Analytics: Real-time visualization of curriculum health, elective popularity, and compliance status. Actionable Insights: Instant notification of pending prerequisite approvals or accreditation gaps. Unified Navigation: Centralized access to all sub-modules through a sleek, modern UI.',
-          images: ['/School_Management_System/Dashboard.png']
+          images: [`${base}School_Management_System/Dashboard.png`]
         },
         {
           title: 'Curriculum & Subject Architecture',
           desc: 'Curriculum Builder: Dynamic creation of degree programs and K-12 strands. Includes sub-modules for Strand Building and Subject Building. Course Mapping: Advanced logic for mapping subjects across different programs and strands to ensure seamless student transitions.',
-          images: ['/School_Management_System/curriculum_builder1.png', '/School_Management_System/curriculum_builder2.png', '/School_Management_System/curriculum_builder3.png', '/School_Management_System/course_mapping1.png', '/School_Management_System/course_mapping2.png']
+          images: [`${base}School_Management_System/curriculum_builder1.png`, `${base}School_Management_System/curriculum_builder2.png`, `${base}School_Management_System/curriculum_builder3.png`, `${base}School_Management_System/course_mapping1.png`, `${base}School_Management_System/course_mapping2.png`]
         },
         {
           title: 'Smart Rule Engine (Prerequisites & Electives)',
           desc: 'Prerequisite Configurator: Set complex logic (hard vs. soft prerequisites) for both Degree and Strand courses. Prevents enrollment errors before they happen. Elective Manager: Manage elective groups, track course popularity, and automate group assignments to optimize class sizes.',
-          images: ['/School_Management_System/pre-requisite1.png', '/School_Management_System/pre-requisite2.png', '/School_Management_System/elective.png']
+          images: [`${base}School_Management_System/pre-requisite1.png`, `${base}School_Management_System/pre-requisite2.png`, `${base}School_Management_System/elective.png`]
         },
         {
           title: 'Historical Intelligence & Equivalency',
           desc: 'Course Offering History: Comprehensive audit of past offerings, including sub-modules for Exporting History for CHED/DepEd reporting. Subject Equivalency Tool: Smart matching algorithm for transfer students or curriculum updates — matches old course codes to new ones with high precision.',
-          images: ['/School_Management_System/course_offering1.png', '/School_Management_System/course_offering2.png', '/School_Management_System/subject_equivalency1.png', '/School_Management_System/subject_equivalency2.png']
+          images: [`${base}School_Management_System/course_offering1.png`, `${base}School_Management_System/course_offering2.png`, `${base}School_Management_System/subject_equivalency1.png`, `${base}School_Management_System/subject_equivalency2.png`]
         },
         {
           title: 'Performance & Compliance Mastery',
           desc: 'Grade Weighting Setup: Customized weighting schemas for different subjects and strands, ensuring accurate GPA and honor calculations. Compliance Validator: A specialized engine that checks curricula against CHED/DepEd standards in real-time, highlighting missing credits or required subjects.',
-          images: ['/School_Management_System/grade_weigthening_set_up1.png', '/School_Management_System/grade_weigthening_set_up2.png', '/School_Management_System/ched_compiance_validator.png']
+          images: [`${base}School_Management_System/grade_weigthening_set_up1.png`, `${base}School_Management_System/grade_weigthening_set_up2.png`, `${base}School_Management_System/ched_compiance_validator.png`]
         },
         {
           title: 'Security, Resilience & Transparency',
           desc: 'Archive System: "Safety-net" feature for accidental deletions. Restore subjects, curricula, or configurations with a single click. Audit Trail: Full accountability — every create, update, delete, or restore action is logged with user IDs, timestamps, and IP addresses.',
-          images: ['/School_Management_System/archive.png', '/School_Management_System/audit_trail.png']
+          images: [`${base}School_Management_System/archive.png`, `${base}School_Management_System/audit_trail.png`]
         },
       ]
     },
@@ -433,10 +435,10 @@ const Projects = () => {
       )}
 
       <section ref={sectionRef} id="projects" className="w-full relative flex items-start justify-center px-4 sm:px-6 lg:px-8 z-10 bg-[#0f0f23]">
-        <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative min-h-[100dvh]">
+        <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 relative min-h-[100dvh]">
           
           {/* Left Side: Project Cards */}
-          <div className="w-full text-left flex flex-col z-10 order-2 lg:order-1 px-8 sm:px-12 lg:px-16 pt-32 pb-40">
+          <div className="w-full text-left flex flex-col z-10 order-2 md:order-1 pt-28 pb-40" style={{ paddingLeft: 'clamp(20px, 6vw, 96px)', paddingRight: '8px' }}>
             {/* Loop rendering 6 Project ScrollCards in isolated snap-chambers */}
             {projects.map((proj) => (
               <ProjectScrollCard key={proj.id} proj={proj} total={projects.length} onClick={() => setSelectedProject(proj)} />
@@ -444,7 +446,7 @@ const Projects = () => {
           </div>
 
           {/* Right Side: 3D Model Sticky Scaffold directly utilizing Model3D_Playground.tsx */}
-          <div className="w-full h-[400px] lg:h-[100dvh] lg:sticky lg:top-0 flex items-center justify-center order-1 lg:order-2 z-0 pb-10 lg:pb-0 pointer-events-none">
+          <div className="w-full h-[280px] sm:h-[340px] md:h-[100dvh] md:sticky md:top-0 flex items-center justify-center order-1 md:order-2 z-0 pb-6 md:pb-0 pointer-events-none">
             {/* Massive blue halo aura setting visual distinction from the pink About robot background */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#22d3ee]/20 to-blue-500/20 rounded-full blur-3xl opacity-50"></div>
             

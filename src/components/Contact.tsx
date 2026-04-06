@@ -45,8 +45,8 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="relative w-full min-h-screen bg-[#0a0a16] snap-start flex flex-col items-center overflow-x-hidden"
-            style={{ paddingTop: '110px', paddingBottom: '80px', paddingLeft: '40px', paddingRight: '40px' }}
+            className="relative w-full min-h-screen bg-[#0a0a16] snap-start flex flex-col items-center overflow-x-hidden px-6 sm:px-10 md:px-14 lg:px-20"
+            style={{ paddingTop: '110px', paddingBottom: '80px' }}
         >
             {/* Ambient orbs */}
             <div className="absolute top-1/3 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -59,12 +59,12 @@ const Contact = () => {
                     <span className="text-lg font-black tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">
                         Get In Touch
                     </span>
-                    <h2 className="text-5xl font-black text-white tracking-tight">Let's Connect</h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">Let's Connect</h2>
                     <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.4)]" />
                 </div>
 
                 {/* Two columns */}
-                <div className="flex flex-col lg:flex-row gap-10 w-full">
+                <div className="flex flex-col md:flex-row gap-10 w-full">
 
                     {/* LEFT: Social cards */}
                     <div className="flex-1 flex flex-col gap-5">
@@ -124,7 +124,7 @@ const Contact = () => {
                     <div className="flex-1">
                         <div
                             className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
-                            style={{ padding: '40px' }}
+                            style={{ padding: 'clamp(20px, 3.5vw, 40px)' }}
                         >
                             <h3 className="text-2xl font-bold text-white" style={{ marginBottom: '28px' }}>Send a Direct Message</h3>
 

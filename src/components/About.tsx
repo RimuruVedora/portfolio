@@ -47,16 +47,16 @@ const About = () => {
   return (
     <>
       <section className="w-full relative z-10 flex items-start justify-center px-4 sm:px-6 lg:px-8 min-h-screen">
-        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative h-full min-h-[100dvh]">
+        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 relative h-full min-h-[100dvh]">
 
           {/* Left Side - Content Container */}
-          <div className="w-full text-left flex flex-col z-10 order-2 lg:order-1 px-8 sm:px-12 lg:px-16">
+          <div className="w-full text-left flex flex-col z-10 order-2 md:order-1" style={{ paddingLeft: 'clamp(20px, 6vw, 96px)', paddingRight: '8px' }}>
 
             {/* ABOUT ME CARD */}
             <div id="about" ref={ref} className={`min-h-[100dvh] flex flex-col justify-center pt-32 pb-20 snap-center relative z-20 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
               <div
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:-translate-y-2 transition-all duration-500 group hover:bg-white/10 hover:shadow-[0_0_40px_rgba(249,115,22,0.15)] flex flex-col items-center sm:items-start text-center sm:text-left w-[95%] mx-auto"
-                style={{ padding: '3rem', marginTop: '120px', marginBottom: '60px' }}
+                style={{ padding: 'clamp(20px, 3.5vw, 48px)', marginTop: 'clamp(80px, 9vw, 130px)', marginBottom: '40px' }}
               >
 
                 <h2
@@ -68,8 +68,7 @@ const About = () => {
 
                 {/* Profile Header (Image + Name) */}
                 <div
-                  className="flex items-center w-full"
-                  style={{ marginBottom: '24px', gap: '32px' }}
+                  className="flex items-center w-full gap-4 sm:gap-6 md:gap-8 mb-5 sm:mb-6"
                 >
                   {/* Outer wrapper — no overflow-hidden so badge can show below */}
                   <div className="relative shrink-0 pb-5">
@@ -127,7 +126,7 @@ const About = () => {
             <div id="education" ref={eduRef} className={`min-h-[100dvh] flex flex-col justify-center pt-32 pb-20 snap-center relative z-20 transition-all duration-1000 transform ${isEducationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
               <div
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:-translate-y-2 transition-all duration-500 group hover:bg-white/10 hover:shadow-[0_0_40px_rgba(249,115,22,0.15)] flex flex-col items-center sm:items-start text-center sm:text-left w-[95%] mx-auto"
-                style={{ padding: '3rem', marginTop: '40px', marginBottom: '60px' }}
+                style={{ padding: 'clamp(20px, 3.5vw, 48px)', marginTop: '30px', marginBottom: '40px' }}
               >
 
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
@@ -217,7 +216,7 @@ const About = () => {
             <div id="certification" ref={certRef} className={`min-h-[100dvh] flex flex-col justify-center pt-32 pb-20 snap-center relative z-20 transition-all duration-1000 transform ${isCertVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
               <div
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:-translate-y-2 transition-all duration-500 group hover:bg-white/10 hover:shadow-[0_0_40px_rgba(249,115,22,0.15)] flex flex-col items-center sm:items-start text-center sm:text-left w-[95%] mx-auto"
-                style={{ padding: '3rem', marginTop: '40px', marginBottom: '60px' }}
+                style={{ padding: 'clamp(20px, 3.5vw, 48px)', marginTop: '30px', marginBottom: '40px' }}
               >
 
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
@@ -319,7 +318,7 @@ const About = () => {
           </div>
 
           {/* Right Side - 3D Playground Model Sticky Container */}
-          <div className="w-full h-[400px] lg:h-[100dvh] lg:sticky lg:top-0 flex items-center justify-center order-1 lg:order-2 z-0 pb-10 lg:pb-0 pointer-events-none">
+          <div className="w-full h-[280px] sm:h-[340px] md:h-[100dvh] md:sticky md:top-0 flex items-center justify-center order-1 md:order-2 z-0 pb-6 md:pb-0 pointer-events-none">
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-full blur-3xl opacity-60"></div>
             <div className="w-full h-full relative pointer-events-auto flex items-center justify-center max-h-[800px]">
               <Model3D_Playground />

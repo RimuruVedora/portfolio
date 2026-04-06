@@ -7,14 +7,32 @@ const Experience = () => {
   const [hasPlayed, setHasPlayed] = useState(false);
   const [isAdFinished, setIsAdFinished] = useState(false);
 
+  // Detect mobile portrait — true when on a non-desktop device in portrait mode
+  const [isMobilePortrait, setIsMobilePortrait] = useState(false);
+
+  useEffect(() => {
+    const checkOrientation = () => {
+      const isMobile = window.innerWidth < 1024; // below lg = mobile/tablet
+      const isPortrait = window.innerHeight > window.innerWidth;
+      setIsMobilePortrait(isMobile && isPortrait);
+    };
+
+    checkOrientation();
+    window.addEventListener('resize', checkOrientation);
+    screen.orientation?.addEventListener?.('change', checkOrientation);
+
+    return () => {
+      window.removeEventListener('resize', checkOrientation);
+      screen.orientation?.removeEventListener?.('change', checkOrientation);
+    };
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Trigger exact single-time autoplay when in view, AND only if the Ad hasn't already finished
         if (entry.isIntersecting && !hasPlayed && !isAdFinished) {
           if (mainVideoRef.current) {
             mainVideoRef.current.play().then(() => {
-              // Successfully started playback! Emit event to hide the Navbar
               window.dispatchEvent(
                 new CustomEvent('videoPlaybackToggle', { detail: { isPlaying: true } })
               );
@@ -36,11 +54,9 @@ const Experience = () => {
   }, [hasPlayed, isAdFinished]);
 
   const handleMainVideoEnd = () => {
-    // 1. Release the Navbar restrictions
     window.dispatchEvent(
       new CustomEvent('videoPlaybackToggle', { detail: { isPlaying: false } })
     );
-    // 2. Trigger UI dynamic state shift!
     setIsAdFinished(true);
   };
 
@@ -55,7 +71,6 @@ const Experience = () => {
       
       {/* =========================================
           PHASE 1: Full Screen Ad 
-          Fades out precisely when the video completes
           ========================================= */}
       <div 
         className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
@@ -65,20 +80,45 @@ const Experience = () => {
         <video 
           ref={mainVideoRef}
           src={`${import.meta.env.BASE_URL}advertise.mp4`} 
-          className="w-full h-full object-cover"
+          className={`w-full h-full transition-all duration-300 ${
+            isMobilePortrait ? 'object-contain' : 'object-cover'
+          }`}
           playsInline
           preload="none"
           onEnded={handleMainVideoEnd} 
         />
-        <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] pointer-events-none"></div>
-        <div className="absolute top-0 w-full h-24 bg-gradient-to-b from-[#0f0f23] to-transparent pointer-events-none z-10"></div>
-        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-[#0f0f23] to-transparent pointer-events-none z-10"></div>
+
+        {/* Vignette overlays — only on desktop full-cover mode */}
+        {!isMobilePortrait && (
+          <>
+            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] pointer-events-none" />
+            <div className="absolute top-0 w-full h-24 bg-gradient-to-b from-[#0f0f23] to-transparent pointer-events-none z-10" />
+            <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-[#0f0f23] to-transparent pointer-events-none z-10" />
+          </>
+        )}
+
+        {/* Rotate-to-landscape prompt — only on portrait mobile during the ad */}
+        {isMobilePortrait && !isAdFinished && (
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 animate-bounce">
+            <div className="flex items-center gap-3 bg-black/80 backdrop-blur-md border border-orange-500/50 rounded-2xl px-5 py-3 shadow-[0_0_20px_rgba(249,115,22,0.3)]">
+              {/* Rotate phone icon */}
+              <svg className="w-7 h-7 text-orange-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+                <rect x="4" y="2" width="16" height="20" rx="2" className="rotate-0" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 21h6" />
+                <path strokeLinecap="round" strokeLinejoin="round" className="text-orange-300" d="M17 8l2-2-2-2M19 6H5" />
+              </svg>
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-sm leading-tight">Rotate for fullscreen</span>
+                <span className="text-orange-400 text-xs font-medium">Landscape mode recommended</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
 
       {/* =========================================
           PHASE 2: Content Layout
-          Fades in and slides up exactly as Phase 1 completes
           ========================================= */}
       <div 
         className={`relative z-20 w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-20 transition-all duration-1000 transform ${
@@ -95,9 +135,9 @@ const Experience = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Skill Matrix Card */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(249,115,22,0.1)] hover:bg-white/10 transition-all duration-500 w-full" style={{ padding: '40px' }}>
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(249,115,22,0.1)] hover:bg-white/10 transition-all duration-500 w-full"
+               style={{ padding: 'clamp(20px, 3.5vw, 40px)' }}>
              
-             {/* Inner scrollable wrapper keeping the scrollbar safely inside the padded bounds */}
              <div className="flex flex-col gap-10 max-h-[50vh] overflow-y-auto overflow-x-hidden" style={{ paddingRight: '16px', paddingBottom: '24px', paddingTop: '8px' }}>
                <div className="border-l-[4px] border-orange-500 py-2 hover:translate-x-2 transition-all duration-300" style={{ paddingLeft: '28px' }}>
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 tracking-widest uppercase">
@@ -131,19 +171,23 @@ const Experience = () => {
           {/* Right Column: User Controllable Interactive Video */}
           <div className="w-full relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(34,211,238,0.2)] bg-black border-2 border-orange-500/20 group">
              
-             {/* Note: This is an entirely distinct video ref specifically for manual user control */}
+             {/* object-contain on mobile portrait so full video is always visible */}
              <video 
                src={`${import.meta.env.BASE_URL}advertise.mp4`} 
-               className="w-full h-auto max-h-[60vh] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+               className={`w-full transition-transform duration-700 group-hover:scale-[1.02] ${
+                 isMobilePortrait
+                   ? 'h-auto object-contain max-h-[50vh]'
+                   : 'h-auto max-h-[60vh] object-contain'
+               }`}
                controls
                preload="metadata"
              />
 
              {/* Cybernetic overlay styling borders */}
-             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-orange-400 pointer-events-none rounded-tl-xl m-2"></div>
-             <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#22d3ee] pointer-events-none rounded-tr-xl m-2"></div>
-             <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#22d3ee] pointer-events-none rounded-bl-xl m-2"></div>
-             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-orange-400 pointer-events-none rounded-br-xl m-2"></div>
+             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-orange-400 pointer-events-none rounded-tl-xl m-2" />
+             <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#22d3ee] pointer-events-none rounded-tr-xl m-2" />
+             <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#22d3ee] pointer-events-none rounded-bl-xl m-2" />
+             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-orange-400 pointer-events-none rounded-br-xl m-2" />
           </div>
 
         </div>
