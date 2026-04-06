@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  color: #ffffff;
+  
+  /* Global Futuristic Robotic Arrow */
+  cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="M3 2L23 10L14 14L10 23L3 2Z" fill="%230f0f23" stroke="%23f97316" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2" fill="%23ec4899"/></svg>') 3 2, auto;
+}
+
+/* Hover/Pointer Cybernetic Targeting Reticle */
+a, button, [role="button"], input, select, textarea, .cursor-pointer {
+  cursor: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="10" fill="%230f0f23" fill-opacity="0.8" stroke="%23ec4899" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="%23f97316"/><path d="M16 2V7M16 25V30M2 16H7M25 16H30" stroke="%2322d3ee" stroke-width="2" stroke-linecap="round"/></svg>') 16 16, pointer !important;
+}
+
+/* 3D Canvas Open Targeting Bracket (Grab) */
+.cursor-grab, [style*="cursor: grab"] {
+  cursor: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M8 8L2 8L2 2L8 2M24 2L30 2L30 8M30 24L30 30L24 30M8 30L2 30L2 24" fill="none" stroke="%23ec4899" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="%230f0f23" stroke="%2300ffd0" stroke-width="2"/></svg>') 16 16, grab !important;
+}
+
+/* 3D Canvas Clamped Mechanical Lock (Grabbing) */
+.cursor-grabbing, .active\:cursor-grabbing:active, [style*="cursor: grabbing"] {
+  cursor: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 12L6 12L6 6L12 6M20 6L26 6L26 12M26 20L26 26L20 26M12 26L6 26L6 20" fill="none" stroke="%23f97316" stroke-width="3"/><circle cx="16" cy="16" r="4" fill="%2300ffd0"/></svg>') 16 16, grabbing !important;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
